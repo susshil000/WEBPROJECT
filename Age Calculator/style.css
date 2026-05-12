@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+
+
+nav {
+    background-color: blue;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 20px;
+}
+
+nav h1 {
+    font-size: 22px;
+}
+
+nav p {
+    font-size: 16px;
+}
+
+
+
+.hero {
+    padding: 30px 15px;
+}
+
+
+
+.hero1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero1 p {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero1 h1 {
+    margin-bottom: 10px;
+}
+
+.hero1 h2 {
+    font-size: 18px;
+    color: rgb(90, 90, 90);
+}
+
+
+
+.hero2 {
+    background-color: white;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto 25px auto;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.hero2 p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero2 input,
+.hero2 button {
+    height: 45px;
+
+    margin-bottom: 15px;
+
+    border-radius: 6px;
+
+    border: 1px solid #ccc;
+
+    padding: 10px;
+
+    font-size: 16px;
+}
+
+
+
+.age {
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.reset {
+    background-color: white;
+    color: blue;
+    border: 2px solid blue;
+    cursor: pointer;
+}
+
+.hero2 h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: gray;
+}
+
+
+
+.hero3 {
+    background-color: white;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: auto;
+
+    border-radius: 12px;
+
+    padding: 25px;
+}
+
+.hero3 h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+
+.cen {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.box {
+    text-align: center;
+}
+
+.number {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+
+hr {
+    height: 60px;
+}
+
+
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: gray;
+}
+
+
+@media(max-width: 600px) {
+
+    .cen {  
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    hr {
+        width: 80%;
+        height: 1px;
+    }
+
+    nav h1 {
+        font-size: 18px;
+    }
+
+    nav p {
+        font-size: 14px;
+    }
+}

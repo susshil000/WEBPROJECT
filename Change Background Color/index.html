@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        *{
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            justify-content: center;
+            align-items: center;
+        }
+        .color {
+            margin: 20px;
+        }
+        #colorPicker {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+        }
+        .color-btn {
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: rgb(0, 0, 0);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="color">
+        <label for="colorPicker">Select Background Color: </label>
+        <button  class="color-btn" id="colorPicker" onclick="changecolor()">Change Color</button>
+    </div>
+   <script>
+   function changecolor(){
+    const color = Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    document.body.style.backgroundColor = "#" + color;
+}
+   </script>
+</body>
+</html>

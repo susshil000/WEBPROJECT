@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazon Speaker Page</title>
+
+    <link rel="stylesheet" href="product.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="./assets/Amazon_logo.svg" alt="Amazon Logo" />
+        </div>
+
+        <div class="loc">
+          <div>Delivering to Jaipur 302001</div>
+
+          <div>
+            <h2>Update location</h2>
+          </div>
+        </div>
+
+        <div class="search">
+          <div>
+            <select class="opt" name="AL" id="AL">
+              <option selected disabled>ALL</option>
+              <option value="car">Car</option>
+              <option value="electronics">Electronics</option>
+              <option value="fashion">Fashion</option>
+              <option value="mobile">Mobile</option>
+              <option value="books">Books</option>
+            </select>
+          </div>
+
+          <div>
+            <input
+              type="search"
+              name="items"
+              id="items"
+              placeholder="Search Amazon.in"
+            />
+          </div>
+
+          <div>
+            <button onclick="searchPage()" class="search-btn">🔍</button>
+          </div>
+        </div>
+
+        <div>
+          <select class="la" name="Language" id="Language">
+            <option value="India">EN</option>
+            <option value="English">English - EN</option>
+            <option value="Hindi">हिन्दी - HI</option>
+            <option value="Tamil">தமிழ் - TA</option>
+            <option value="Telugu">తెలుగు - TE</option>
+            <option value="Kannada">ಕನ್ನಡ - KN</option>
+            <option value="Malayalam">മലയാളം - ML</option>
+            <option value="Bengali">বাংলা - BN</option>
+            <option value="Marathi">मराठी - MR</option>
+          </select>
+        </div>
+        <div class="log">
+          <div>
+            <p>Hello , sign in</p>
+
+            <p>Account % lists ‸</p>
+          </div>
+        </div>
+        <div class="return">
+          <p>Return</p>
+          <p>%Order</p>
+        </div>
+        <div class="cart">Cart</div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+
+    <main>
+      <section class="products">
+        <!-- CARD 1 -->
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="./assets/speaker1.jpg" alt="" />
+          </div>
+
+          <div class="product-info">
+            <h3>Tribit Updated Version XSound Go Wireless Bluetooth Speaker</h3>
+
+            <p class="rating">4.4 ⭐⭐⭐⭐☆</p>
+
+            <p class="price">₹2,702</p>
+
+            <p class="delivery">FREE delivery Thu, 14 May</p>
+
+            <button>Add to cart</button>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="./assets/speaker2.jpg" alt="" />
+          </div>
+
+          <div class="product-info">
+            <h3>Sonos Arc Ultra Soundbar with Dolby Atmos</h3>
+
+            <p class="rating">4.4 ⭐⭐⭐⭐☆</p>
+
+            <p class="price">₹84,999</p>
+
+            <p class="delivery">FREE delivery Sat, 16 May</p>
+
+            <button>Add to cart</button>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="./assets/speaker3.jpg" alt="" />
+          </div>
+
+          <div class="product-info">
+            <h3>ZEBRONICS 120W Party Trolley DJ Speaker</h3>
+
+            <p class="rating">3.4 ⭐⭐⭐☆☆</p>
+
+            <p class="price">₹9,999</p>
+
+            <p class="delivery">FREE delivery Thu, 14 May</p>
+
+            <button>Add to cart</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRENDING -->
+
+      <section class="trending">
+        <h2>Trending now</h2>
+
+        <div class="trend-container">
+          <div class="trend-card">
+            <img src="./assets/trend1.jpg" alt="" />
+
+            <p>Mini Bluetooth Karaoke Speaker</p>
+
+            <h3>₹760</h3>
+
+            <button>Add to cart</button>
+          </div>
+
+          <div class="trend-card">
+            <img src="./assets/trend2.jpg" alt="" />
+
+            <p>Sonos Era 100 Smart Speaker</p>
+
+            <h3>₹19,549</h3>
+
+            <button>Add to cart</button>
+          </div>
+
+          <div class="trend-card">
+            <img src="./assets/trend3.jpg" alt="" />
+
+            <p>Marshall Emberton II Speaker</p>
+
+            <h3>₹12,499</h3>
+
+            <button>Add to cart</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="call">Back to top</p>
+
+      <div class="footer-links">
+        <div>
+          <p>Get to Know Us</p>
+
+          <a href="#">About Amazon</a>
+          <a href="#">Careers</a>
+          <a href="#">Press Releases</a>
+          <a href="#">Amazon Science</a>
+        </div>
+
+        <div>
+          <p>Connect with Us</p>
+
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+
+        <div>
+          <p>Make Money with Us</p>
+
+          <a href="#">Sell on Amazon</a>
+          <a href="#">Sell under Amazon Accelerator</a>
+          <a href="#">Protect and Build Your Brand</a>
+          <a href="#">Amazon Global Selling</a>
+          <a href="#">Supply to Amazon</a>
+          <a href="#">Become an Affiliate</a>
+          <a href="#">Fulfilment by Amazon</a>
+          <a href="#">Advertise Your Products</a>
+          <a href="#">Amazon Pay on Merchants</a>
+        </div>
+
+        <div>
+          <p>Let Us Help You</p>
+
+          <a href="#">Your Account</a>
+          <a href="#">Returns Centre</a>
+          <a href="#">Recalls and Product Safety Alerts</a>
+          <a href="#">100% Purchase Protection</a>
+          <a href="#">Amazon App Download</a>
+          <a href="#">Help</a>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="foot">
+        <div>
+          <img class="img1" src="./assets/Amazon_logo.svg" alt="Amazon Logo" />
+        </div>
+
+        <div class="nav-buttons">
+          <label for="Language">Language</label>
+
+          <select class="lang" name="Language">
+            <option value="English">English - EN</option>
+            <option value="Hindi">हिन्दी - HI</option>
+            <option value="Tamil">தமிழ் - TA</option>
+            <option value="Telugu">తెలుగు - TE</option>
+            <option value="Kannada">ಕನ್ನಡ - KN</option>
+            <option value="Malayalam">മലയാളം - ML</option>
+            <option value="Bengali">বাংলা - BN</option>
+            <option value="Marathi">मराठी - MR</option>
+          </select>
+        </div>
+
+        <div>
+          <button class="butt">India</button>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer-links">
+        <div>
+          <a href="#">AbeBooks</a>
+          <a href="#">Books, art & collectibles</a>
+        </div>
+
+        <div>
+          <a href="#">Amazon Web Services</a>
+          <a href="#">Scalable Cloud Computing Services</a>
+        </div>
+
+        <div>
+          <a href="#">Audible</a>
+          <a href="#">Download Audio Books</a>
+        </div>
+
+        <div>
+          <a href="#">IMDb</a>
+          <a href="#">Movies, TV & Celebrities</a>
+        </div>
+      </div>
+
+      <div class="about">
+        <div>
+          <a href="#">Conditions of Use & Sale</a>
+        </div>
+
+        <div>
+          <a href="#">Privacy Notice</a>
+        </div>
+
+        <div>
+          <a href="#">Interest-Based Ads</a>
+        </div>
+      </div>
+
+      <div class="about">
+        <p>© 1996-2026, Amazon.com, Inc. or its affiliates</p>
+      </div>
+    </footer>
+    <script>
+      function searchPage() {
+        window.location.href = "product.html";
+      }
+      function addTpCart(name, price) {
+        let cartItems = document.getElementById("cartItems");
+        let li = document.createElement("li");
+        li.innerHTML = `${name} - ${price}`;
+        cartItems.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

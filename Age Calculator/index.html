@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>📅 Age Calculator</h1>
+        <p>🔎 About</p>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero1">
+        <p>📅</p>
+        <h1>Age Calculator</h1>
+        <h2>Calculate your age in years, months and days</h2>
+      </div>
+
+      <div class="hero2">
+        <p>📅 Select your date of birth</p>
+
+        <input type="date" id="dob" />
+
+        <button class="age" onclick="calculateAge()">Calculate Age</button>
+
+        <h3>OR</h3>
+
+        <button class="reset" onclick="reset()">Reset</button>
+      </div>
+
+      <div class="hero3">
+        <h1>🕜 Your Age</h1>
+
+        <div class="cen">
+          <div class="box">
+            <p class="number year">---</p>
+            <p>Years</p>
+          </div>
+
+          <hr />
+
+          <div class="box">
+            <p class="number month">---</p>
+            <p>Months</p>
+          </div>
+
+          <hr />
+
+          <div class="box">
+            <p class="number day">---</p>
+            <p>Day</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>@2026 Age Calculator. All rights reserved.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #000;
+            overflow: hidden;
+        }
+        .banner {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .slider {
+            position: absolute;
+            width: 200px;
+            height: 250px;
+            top: 10%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) translateX(-50%);
+            animation: autoRun 20s linear infinite;
+            z-index: 3;
+
+            --quantity: 4;
+        }
+
+        .slider .item {
+            position: absolute;
+            inset: 0;
+            transform-style: preserve-3d;
+
+            transform:
+                rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+                translateZ(550px);
+        }
+
+        .slider .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        @keyframes autoRun {
+            from {
+                transform: perspective(1000px) translateX(-50%) rotateY(0deg);
+            }
+            to {
+                transform: perspective(1000px) translateX(-50%) rotateY(360deg);
+            }
+        }
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(300px, 80%, 1400px);
+            padding-bottom: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            z-index: 1;
+            color: white;
+        }
+
+        .content h1 {
+            font-family: 'Iceland', cursive;
+            font-size: 16em;
+            line-height: 1em;
+            position: relative;
+        }
+
+        .content h1::after {
+            content: attr(data-content);
+            position: absolute;
+            inset: 0;
+            -webkit-text-stroke: 2px white;
+            color: transparent;
+            z-index: 2;
+        }
+
+        .author {
+            max-width: 220px;
+            text-align: justify;
+        }
+
+        .author div {
+            font-size: 3em;
+            font-weight: bold;
+        }

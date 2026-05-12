@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container" id="startScreen">
+      <h1 class="title">GUESS THE<br />NUMBER!</h1>
+      <p class="subtitle">A GAME OF WITS & LUCK</p>
+      <div class="name-box" id="nameScreen">
+        <input type="text" id="names" placeholder="Enter Name" />
+      </div>
+
+      <button class="start-btn" id="startBtn">
+        START GAME <span class="arrow">➜</span>
+      </button>
+
+      <div class="menu">
+        <span id="info">• Instructions</span>
+        <span id="scores">•Scores</span>
+      </div>
+      <div class="popup" id="popupbox">
+        <div class="popup-content">
+          <span class="close" onclick="closepopup()">Close</span>
+          <h2 id="popuptitle"></h2>
+          <p id="popuptext"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-box" id="gameScreen" style="display: none">
+      <input type="number" id="guessInput" placeholder="Enter number" />
+      <button onclick="checkGuess()">Check</button>
+
+      <p id="message"></p>
+      <p id="attempts">Attempts: 0</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
