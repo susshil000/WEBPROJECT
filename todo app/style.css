@@ -1,0 +1,162 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.all{
+  width: 600px;
+  max-width: 90%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+
+h1{
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.box{
+  display: flex;
+  flex-wrap: wrap;
+   width: 1000px;
+  max-width: 100%; 
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"]{
+  flex: 1;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button{
+  padding: 10px 15px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+button:hover{
+  background: #218838;
+}
+
+.taskList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+.cb-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.cb-container input{
+  display: none;
+}
+
+.checkmark{
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 2px solid #222;
+  position: relative;
+  transition: 0.3s;
+}
+
+.cb-container:hover .checkmark{
+  box-shadow: 0 0 8px rgba(0,255,0,0.6);
+}
+
+.checkmark::after{
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  left: 8px;
+  top: 3px;
+  transform: rotate(45deg) scale(0);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.cb-container input:checked + .checkmark{
+  background: #53c80b;
+  box-shadow: 0 0 12px rgba(0,255,0,0.8);
+}
+
+.cb-container input:checked + .checkmark::after{
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+}
+
+.cb-container input:checked ~ .text{
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.actions button{
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.edit{
+  background: #9ca3af;
+}
+.edit:hover{
+  background: #6b7280;
+}
+
+.done{
+  background: #22c55e;
+}
+.done:hover{
+  background: #16a34a;
+}
+
+.delete{
+  background: #ef4444;
+}
+.delete:hover{
+  background: #dc2626;
+}

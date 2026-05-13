@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="all">
+      <h1>To-Do List</h1>
+
+      <div class="box">
+        <input type="text"  id="taskInput" placeholder="Enter your task" />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+
+      <div class="taskList">
+        <label class="cb-container">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+          <span class="text">TASK</span>
+        </label>
+
+        <div class="actions">
+          <button class="edit" onclick="editTask(this)">✏</button>
+          <button class="done" onclick="doneTask(this)">✔</button>
+          <button class="delete" onclick="deleteTask(this)">🗑</button>
+        </div>
+      </div>
+    </div> 
+    <script src="script.js"></script>
+  </body>
+</html>
