@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        padding: 15px;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+
+    }
+
+    .Box {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        
+        color: white;
+    }
+
+    .main-title {
+        font-size: 42px;
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+    }
+
+    .container {
+
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+        width: 90%;
+        max-width: 400px;
+        background: #fff;
+        padding: 19px;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        animation: fade 0.6s ease;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+            transform: scale(0.9px);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    .form-control {
+        margin-bottom: 18px;
+        position: relative;
+    }
+
+    .form-control label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #0f0e0e;
+    }
+
+    .form-control input,
+    .form-control select {
+        width: 100%;
+        padding: 12px ;
+        border: 2px solid #737171;
+        border-radius: 6px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    .form-control input:focus,
+    .form-control select:focus {
+        border-color: #0e12de;
+    }
+
+    .form-control.success input,
+    .form-control.success select {
+        border-color: #28a745;
+    }
+
+    .form-control.success .icon {
+        color: #28a745;
+        position: absolute;
+        right: 10px;
+        top: 40px;
+    }
+
+    .form-control.error input,
+    .form-control.error select {
+        border-color: #dc3545;
+    }
+
+    .form-control.error .icon {
+        color: #dc3545;
+        position: absolute;
+        right: 10px;
+        top: 40px;
+    }
+
+    .form-control.error small {
+        visibility: visible;
+    }
+
+    .form-control small {
+        color: #dc3545;
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        visibility: hidden;
+    }
+
+    .form-control icon {
+        position: relative;
+        right: 10px;
+        top: 32px;
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            margin: 0 10px;
+            padding: 20px 25px;
+        }
+    }
+
+    .out {
+        display: flex;
+        justify-content: center;
+        color: rgb(188, 186, 190);
+        font-size: large;
+        font: bold;
+        margin-bottom: 10px;
+    }
+
+    .login {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 350px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        border: 10px solid rgb(223, 221, 219);
+        background-color: #ececf0;
+        margin-top: 10px;
+        border-radius: 8px;
+        padding: 10px;
+
+    }
+
+    .login button {
+        width: 150px;
+        padding: 10px;
+
+        border: 1px solid rgb(130, 107, 114);
+        border-radius: 6px;
+        background: white;
+        color: black;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+        white-space: nowrap;
+        gap: 8px;
+    }
+
+    .create-link {
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .img.btn {
+        display: flex;
+        align-items: center;
+
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        height: 0px;
+    }
+
+    .img.btn:hover {
+        background-color: #f0f0f0;
+    }
+
+    .img.btn img {
+        object-fit: cover;
+    }
+
+    .google {
+        position: relative;
+        top: 5px;
+        height: 25px;
+        width: 25px;
+
+    }
+
+    .facebook {
+        position: relative;
+        top: 4px;
+        height: 25px;
+        width: 25px;
+    }
+
+    .apple {
+        position: relative;
+        top: 3px;
+        height: 20px;
+        width: 20px;
+    }
+</style>
+
+<body>
+    <div class="Box">
+        <h1 class="main-title">LOGIN</h1>
+        <div class="container">
+
+            <h1>Welcome Back!</h1>
+
+            <form id="form">
+                <div class="form-control">
+                    <label for="username">UserName</label>
+                    <input type="text" id="username" name="username" placeholder="🧛‍♀️ example" required>
+                    <i class="icon"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="✉ abc@gmail.com" required>
+                    <i class="icon"></i>
+                    <small>Error message</small>
+
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="🔒  Password here" required>
+                    <i class="icon"></i>
+                    <small>Error message</small>
+
+                </div>
+
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="out">
+            <p>Don't have an account? <span class="create-link " >Create</span> </p>
+        </div>
+        <div class="login">
+            <button class="img.btn"><img class="google" src="./assets/google.png" alt="Google logo"> <span>Google</span>
+            </button>
+            <button class="img.btn"><img class="facebook" src="./assets/facebook.png"
+                    alt="Facebook logo"><span>Facebook</span> </button>
+            <button class="img.btn"><img class="apple" src="./assets/apple.png" alt="Apple logo"><span>Apple</span>
+            </button>
+
+        </div>
+
+    </div>
+    <script src="Login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up UI</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #3a1c71, #4a4fcf, #5f2c82);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 380px;
+        padding: 20px;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 42px;
+        color: white;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 18px;
+        padding: 30px 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .card h2 {
+        text-align: center;
+        margin-bottom: 22px;
+        color: #333;
+      }
+
+      .field {
+        margin-bottom: 15px;
+      }
+
+      .field label {
+        font-size: 14px;
+        color: #444;
+        margin-bottom: 5px;
+        display: block;
+        font-weight: 600;
+      }
+
+      .input-box {
+        display: flex;
+        align-items: center;
+        background: #f2f5ff;
+        border-radius: 10px;
+        padding: 10px 14px;
+        border: 1px solid #e1e6ff;
+        transition: 0.3s;
+      }
+
+      .input-box:focus-within {
+        border-color: #5b6cff;
+        box-shadow: 0 0 0 2px rgba(91, 108, 255, 0.2);
+      }
+
+      .input-box span {
+        font-size: 18px;
+        margin-right: 10px;
+        color: #666;
+      }
+
+      .input-box input {
+        border: none;
+        outline: none;
+        width: 100%;
+        background: transparent;
+        font-size: 14px;
+        color: #333;
+      }
+
+      #btn {
+        margin-top: 15px;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #4a4fcf, #6c63ff);
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      #btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      }
+
+      .login-text {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+        color: #444;
+      }
+
+      .login-text a {
+        color: #5b6cff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .login-text a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 420px) {
+        .title {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="title">SIGN UP</div>
+
+      <div class="card">
+        <h2>Create Account</h2>
+
+        <div class="field">
+          <label>Username</label>
+          <div class="input-box">
+            <span>👤</span>
+            <input type="text" id="username" placeholder="Username" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Email Address</label>
+          <div class="input-box">
+            <span>✉️</span>
+            <input type="email" id="email" placeholder="example@gmail.com" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <div class="input-box">
+            <span>🔒</span>
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Confirm Password</label>
+          <div class="input-box">
+            <span>🔒</span>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" />
+          </div>
+        </div>
+
+        <button id="btn" onclick="Signup()">Sign Up</button>
+
+        <div class="login-text">
+          Already have an account? <a href="Login.html">Login</a>
+        </div>
+      </div>
+    </div>
+    <script src="Signup.js"></script>
+  </body>
+</html>
