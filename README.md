@@ -7,6 +7,7 @@ This repository contains my frontend web development practice projects.
 - Age Calculator
 - Amazon Clone
 - Change Background Color
+- Form Validation Project 
 - Netflix clone 
 - Number Guessing Game
 - Personal Portfolio Website
