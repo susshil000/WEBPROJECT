@@ -14,6 +14,8 @@ This repository contains my frontend web development practice projects.
 - Pricing Table
 - Simple Calculator
 - Sliding Image Project
+- Portfolio
+- Todo List
 - Weather App
 
 ## Technologies Used
