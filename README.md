@@ -8,6 +8,7 @@ This repository contains my frontend web development practice projects.
 - Amazon Clone
 - Change Background Color
 - Form Validation Project 
+- Music Player 
 - Netflix clone 
 - Number Guessing Game
 - Personal Portfolio Website
