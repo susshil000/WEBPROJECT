@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Neumorphism Music Player</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #e9edf5;
+        }
+
+        .player {
+        display: flex;
+        flex-wrap: wrap;
+            width: 1100px;
+            height: 650px;
+            background: #e9edf5;
+            border-radius: 35px;
+
+            box-shadow:
+                20px 20px 40px #c7ccd4,
+                -20px -20px 40px #ffffff;
+
+            overflow: hidden;
+        }
+
+
+        .top {
+            height: 75%;
+            padding: 55px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cover {
+            width: 420px;
+            height: 420px;
+            border-radius: 30px;
+            overflow: hidden;
+
+            box-shadow:
+                15px 15px 30px #c7ccd4,
+                -15px -15px 30px #ffffff;
+        }
+
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+     
+
+        .center {
+            flex: 1;
+            margin-left: 60px;
+        }
+
+        .center h1 {
+            font-size: 62px;
+            color: #1b1b1b;
+            margin-bottom: 15px;
+        }
+
+        .center p {
+            font-size: 34px;
+            color: #9aa3b2;
+            margin-bottom: 90px;
+        }
+
+  
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .time span {
+            color: #9aa3b2;
+            font-size: 26px;
+        }
+
+.progress{
+    -webkit-appearance:none;
+    width:100%;
+    height:10px;
+    background:#d5dae3;
+    border-radius:50px;
+    cursor:pointer;
+}
+
+.progress::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:25px;
+    height:25px;
+    background:#8b5cf6;
+    border-radius:50%;
+    border:4px solid #fff;
+
+    box-shadow:
+    0 0 10px rgba(0,0,0,0.2);
+}
+        .side {
+            width: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-left: 40px;
+        }
+
+        .side-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #8d96a8;
+            font-size: 30px;
+
+            background: #e9edf5;
+
+            box-shadow:
+                10px 10px 20px #c7ccd4,
+                -10px -10px 20px #ffffff;
+        }
+
+        .play-big {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            font-size: 38px;
+        }
+
+        .bottom {
+            height: 25%;
+            border-top: 1px solid rgba(255, 255, 255, 0.7);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 55px;
+        }
+#volume{
+    width:220px;
+    height:8px;
+
+    -webkit-appearance:none;
+
+    background:#d5dae3;
+    border-radius:50px;
+
+    cursor:pointer;
+}
+
+
+#volume::-webkit-slider-thumb{
+
+    -webkit-appearance:none;
+
+    width:20px;
+    height:20px;
+
+    border-radius:50%;
+
+    background:#8b5cf6;
+
+    border:3px solid #fff;
+}
+
+        .volume {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .volume i {
+            font-size: 28px;
+            color: #8d96a8;
+        }
+
+        .volume-bar {
+            width: 220px;
+            height: 8px;
+            background: #d5dae3;
+            border-radius: 50px;
+            position: relative;
+        }
+
+        
+
+
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .controls .btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #e9edf5;
+            color: #8d96a8;
+            font-size: 30px;
+
+            box-shadow:
+                10px 10px 20px #c7ccd4,
+                -10px -10px 20px #ffffff;
+        }
+
+        .controls .main {
+            width: 110px;
+            height: 110px;
+            font-size: 40px;
+        }
+
+
+
+        .last {
+            font-size: 35px;
+            color: #8d96a8;
+        }
+        @media (max-width: 1200px) {
+            .player {
+                width: 90%;
+                height: auto;
+                margin: auto;
+            }
+
+            .top {
+                flex-direction: column;
+                height: auto;
+                padding: 30px;
+            }
+
+            .center {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .side {
+                flex-direction: row;
+                margin-left: 0;
+                margin-top: 30px;
+            }
+
+            .bottom {
+                flex-direction: column;
+                height: auto;
+                padding: 30px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="player">
+
+        <div class="top">
+
+
+
+            <div class="cover">
+                <img src="assets/image.png">
+            </div>
+
+
+
+            <div class="center">
+
+                <h1>Norm Ender</h1>
+                <p>Mekanın Sahibi</p>
+                <audio  id="song">
+                    <source src="assets/hi.mp3">
+                </audio>
+                <input type="range" value="0" id="progress" class="progress">
+                <div class="time">
+               
+                <span id="current">00:00</span>
+                <span id="duration">03:00</span>
+            </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="bottom">
+
+            <div class="volume">
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                
+                <input type="range" value="50" min="0" max="100" id="volume" class="volume-bar">
+
+            </div>
+
+            <div class="controls">
+
+                <div class="btn "id="shuffleBtn">
+                    <i class="fa-solid fa-shuffle"></i>
+                </div>
+
+                <div class="btn" id="prevBtn">
+                    <i class="fa-solid fa-backward-step"></i>
+                </div>
+
+                <div class="btn main">
+                    <i class="fa-solid fa-play" id="ctrlIcon"></i>
+                </div>
+
+                <div class="btn" id="nextBtn">
+                    <i class="fa-solid fa-forward-step"></i>
+                </div>
+
+                <div class="btn" id="repeatBtn">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </div>
+
+            </div>
+
+            <div class="last">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+  <script src="script.js"></script>
+</body>
+
+</html>
