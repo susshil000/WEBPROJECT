@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+
+        .clock {
+            display: flex;
+            align-items: flex-start;
+            background: #050505;
+            border: 4px solid #222;
+            border-radius: 30px;
+            padding: 40px 60px;
+            box-shadow:
+                0 0 20px rgba(0, 255, 0, 0.2),
+                inset 0 0 10px rgba(255, 255, 255, 0.05);
+        }
+
+        #time {
+            color: #39ff14;
+            font-size: 120px;
+            font-weight: bold;
+            letter-spacing: 8px;
+            text-shadow:
+                0 0 10px #39ff14,
+                0 0 20px #39ff14,
+                0 0 40px #39ff14;
+        }
+
+        .ampm {
+            color: #39ff14;
+            font-size: 40px;
+            margin-left: 10px;
+            vertical-align: text-top;
+        }
+
+        @media(max-width:768px) {
+            #time {
+                font-size: 60px;
+            }
+
+            .clock {
+                padding: 25px 35px;
+            }
+
+            .ampm {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock">
+        <span id="time">00:00:00</span>
+        <span class="ampm" id="ampm">AM</span>
+    </div>
+
+    <script>
+        function updateClock() {
+
+            let now = new Date();
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            let ampm = hours >= 12 ? "PM" : "AM";
+
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+
+            hours = String(hours).padStart(2, '0');
+            minutes = String(minutes).padStart(2, '0');
+            seconds = String(seconds).padStart(2, '0');
+
+            document.getElementById("time").innerHTML =
+                `${hours}:${minutes}:${seconds}`;
+
+            document.getElementById("ampm").innerHTML = ampm;
+        }
+
+        updateClock();
+
+        setInterval(updateClock, 1000);
+    </script>
+
+</body>
+
+</html>
