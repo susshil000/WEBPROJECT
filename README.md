@@ -17,8 +17,11 @@ This repository contains my frontend web development practice projects.
 - Password Generator 
 - Personal Portfolio Website
 - Pricing Table
+- Quiz app
 - Simple Calculator
 - Sliding Image Project
+- Stopwatch 
+- Text To Speech Convert 
 - Portfolio
 - Todo List
 - Weather App
