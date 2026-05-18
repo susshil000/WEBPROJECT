@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #140028, #2c0055, #090014);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .start-screen,
+        .quiz-screen,
+        .result-screen {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 35px;
+        }
+
+        .start-screen p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            background: #69ff5b;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .progress {
+            width: 100%;
+            height: 10px;
+            background: #3f3f3f;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #69ff5b;
+            transition: 0.4s;
+        }
+
+        .question {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 16px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background: #4b008f;
+            transform: translateY(-2px);
+        }
+
+        .correct {
+            background: #34d399 !important;
+            color: black;
+        }
+
+        .wrong {
+            background: #ff4d4d !important;
+        }
+
+        .score {
+            font-size: 55px;
+            text-align: center;
+            margin: 20px 0;
+            color: #69ff5b;
+        }
+
+        .result-screen p {
+            text-align: center;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        @media(max-width:500px) {
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .question {
+                font-size: 20px;
+            }
+
+            .option {
+                font-size: 15px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+   
+
+        <div class="start-screen active" id="startScreen">
+
+            <h1>Quiz App 🚀</h1>
+
+            <p>
+                Test your knowledge with this awesome quiz app.
+                Click start and answer all questions.
+            </p>
+
+            <button class="btn" id="startBtn">
+                Start Quiz
+            </button>
+
+        </div>
+
+
+        <div class="quiz-screen" id="quizScreen">
+
+            <div class="top">
+                <span id="questionNumber">Question 1/5</span>
+                <span>⏳ Quiz Time</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <div class="question" id="question">
+                Question Here
+            </div>
+
+            <div class="options" id="options">
+
+            </div>
+
+        </div>
+
+
+
+        <div class="result-screen" id="resultScreen">
+
+            <h1>Quiz Finished 🎉</h1>
+
+            <div class="score" id="score">
+                0/5
+            </div>
+
+            <p>
+                Great job completing the quiz.
+            </p>
+
+            <button class="btn" onclick="restartQuiz()">
+                Play Again
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const questions = [
+
+            {
+                question: "Which planet is known as the Red Planet?",
+                options: ["Earth", "Mars", "Jupiter", "Venus"],
+                answer: "Mars"
+            },
+
+            {
+                question: "HTML stands for?",
+                options: [
+                    "Hyper Text Markup Language",
+                    "High Transfer Machine Language",
+                    "Hyper Tool Multi Language",
+                    "Home Text Language"
+                ],
+                answer: "Hyper Text Markup Language"
+            },
+
+            {
+                question: "CSS is used for?",
+                options: [
+                    "Database",
+                    "Styling",
+                    "Backend",
+                    "Server"
+                ],
+                answer: "Styling"
+            },
+
+            {
+                question: "JavaScript is?",
+                options: [
+                    "Programming Language",
+                    "Database",
+                    "Operating System",
+                    "Browser"
+                ],
+                answer: "Programming Language"
+            },
+
+            {
+                question: "Which tag is used for image in HTML?",
+                options: [
+                    "<img>",
+                    "<image>",
+                    "<pic>",
+                    "<photo>"
+                ],
+                answer: "<img>"
+            }
+
+        ];
+
+
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        const startScreen = document.getElementById("startScreen");
+        const quizScreen = document.getElementById("quizScreen");
+        const resultScreen = document.getElementById("resultScreen");
+
+        const questionText = document.getElementById("question");
+        const optionsBox = document.getElementById("options");
+        const progressBar = document.getElementById("progressBar");
+        const questionNumber = document.getElementById("questionNumber");
+        const scoreText = document.getElementById("score");
+
+
+
+        document.getElementById("startBtn").addEventListener("click", () => {
+
+            startScreen.classList.remove("active");
+            quizScreen.classList.add("active");
+
+            showQuestion();
+
+        });
+
+
+
+        function showQuestion() {
+
+            let q = questions[currentQuestion];
+
+            questionText.innerText = q.question;
+
+            questionNumber.innerText =
+                `Question ${currentQuestion + 1}/${questions.length}`;
+
+            progressBar.style.width =
+                `${((currentQuestion + 1) / questions.length) * 100}%`;
+
+            optionsBox.innerHTML = "";
+
+            q.options.forEach(option => {
+
+                const button = document.createElement("div");
+
+                button.classList.add("option");
+
+                button.innerText = option;
+
+                button.onclick = () => checkAnswer(button, option);
+
+                optionsBox.appendChild(button);
+
+            });
+
+        }
+
+
+
+        function checkAnswer(button, selected) {
+
+            const correctAnswer = questions[currentQuestion].answer;
+
+            const allOptions = document.querySelectorAll(".option");
+
+            allOptions.forEach(opt => {
+                opt.style.pointerEvents = "none";
+            });
+
+            if (selected === correctAnswer) {
+
+                button.classList.add("correct");
+
+                score++;
+
+            } else {
+
+                button.classList.add("wrong");
+
+                allOptions.forEach(opt => {
+
+                    if (opt.innerText === correctAnswer) {
+
+                        opt.classList.add("correct");
+
+                    }
+
+                });
+
+            }
+
+            setTimeout(() => {
+
+                currentQuestion++;
+
+                if (currentQuestion < questions.length) {
+
+                    showQuestion();
+
+                } else {
+
+                    showResult();
+
+                }
+
+            }, 1500);
+
+        }
+
+
+
+        function showResult() {
+
+            quizScreen.classList.remove("active");
+
+            resultScreen.classList.add("active");
+
+            scoreText.innerText = `${score}/${questions.length}`;
+
+        }
+
+
+
+        function restartQuiz() {
+
+            currentQuestion = 0;
+            score = 0;
+
+            resultScreen.classList.remove("active");
+
+            quizScreen.classList.add("active");
+
+            showQuestion();
+
+        }
+
+    </script>
+
+</body>
+
+</html>

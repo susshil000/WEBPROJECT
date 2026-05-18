@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text To Speech Converter</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #17004d, #7b0f74);
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .container h1 {
+            color: white;
+            font-size: 55px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .container h1 span {
+            color: #ff2963;
+            border-bottom: 4px solid #ff2963;
+            padding-bottom: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            border: none;
+            outline: none;
+            resize: none;
+            border-radius: 15px;
+            background: #403d84;
+            color: white;
+            padding: 25px;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        textarea::placeholder {
+            color: #ddd;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        select {
+            flex: 1;
+            min-width: 250px;
+            height: 55px;
+            border: none;
+            outline: none;
+            border-radius: 35px;
+            padding: 0 20px;
+            background: #403d84;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            background: #ff2963;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 35px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #ff0f54;
+        }
+
+        @media(max-width:768px) {
+
+            .container h1 {
+                font-size: 38px;
+            }
+
+            textarea {
+                height: 200px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            select {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+
+        }
+
+        @media(max-width:480px) {
+
+            .container h1 {
+                font-size: 30px;
+            }
+
+            textarea {
+                font-size: 16px;
+                padding: 18px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Text To Speech <span>Converter</span></h1>
+
+        <textarea placeholder="Write anything here..."></textarea>
+
+        <div class="row">
+
+            <select></select>
+
+            <button>▶ Listen</button>
+
+        </div>
+
+    </div>
+ <script src="script.js"></script>
+</body>
+
+
+</html>
